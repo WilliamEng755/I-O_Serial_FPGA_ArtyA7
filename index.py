@@ -15,6 +15,8 @@ for i in range(5):
     resposta = ser.read(100)
     if resposta:
         print(f"Recebido: {resposta.decode('utf-8')}")
+        #print("Recebido:", resposta)
+
         break
 else:
     print("Nenhuma resposta recebida.")

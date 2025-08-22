@@ -76,9 +76,9 @@ module UART_TX (
 
         SEND_DATA: begin
           if (tx_pulse) begin
-            o_tx <= tx_data[tx_bit_cnt];        //Uma solução é jogar para o if de baixo
+            o_tx <= tx_data[tx_bit_cnt];
             if (tx_bit_cnt < DATA_WIDTH - 1) begin
-              o_tx <= tx_data[tx_bit_cnt];
+              tx_bit_cnt <= tx_bit_cnt + 1;
             end else begin
               uart_txstate <= STOP;
             end
