@@ -28,7 +28,7 @@ O valor dentro de ser.read(100) é apenas o limite máximo de bytes que será li
 Você pode colocar qualquer valor, como 50, 100, 200, etc., dependendo do tamanho máximo que espera receber.
 Se chegar menos bytes do que o valor definido, ele retorna apenas o que tiver recebido antes do timeout.
 
-##Pinagem para o arquivo .xdc
+## Pinagem para o arquivo .xdc
 
 set_property -dict { PACKAGE_PIN E3    IOSTANDARD LVCMOS33 } [get_ports { CLK }];
 create_clock -add -name sys_clk_pin -period 10.00 -waveform {0 5} [get_ports { CLK }];
