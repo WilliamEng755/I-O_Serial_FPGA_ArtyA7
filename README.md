@@ -17,7 +17,7 @@ Este projeto contém arquivos Verilog e Python para comunicação serial entre u
 
 ## Explicação do script python
 
-Na linha ser = serial.Serial('COM4', 9600), a porta 'COM4' refere-se à porta serial do seu computador. Pode ser que, no seu caso, ela seja exatamente 'COM4', mas também pode variar. Quando você conectar a placa à sua máquina, abra o Gerenciador de Dispositivos e verifique qual é o nome da porta atribuída. Depois, substitua 'COM4' pelo nome correto da sua porta serial.
+Na linha ser = serial.Serial('COM4', 9600), a porta 'COM4' refere-se à porta serial do seu computador. Pode ser que, no seu caso, ela seja exatamente 'COM4', mas também pode variar. Quando você conectar a placa à sua máquina, abra o Gerenciador de Dispositivos (Windows) ou  sudo dmesg | grep tty (Linux) e verifique qual é o nome da porta atribuída. Depois, substitua 'COM4' pelo nome correto da sua porta serial.
 
 Na linha ser.write(b'Teste entrada e saida 123\n') tem que usar o '\n', onde ele é é um caractere ASCII (0x0A) usado como marcador de fim de mensagem na comunicação serial.
 Sem ele, a FPGA não sabe onde a frase termina e pode juntar dados ou mandar lixo no retorno.
